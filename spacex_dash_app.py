@@ -68,6 +68,8 @@ app.layout = html.Div(children=[html.H1('SpaceX Launch Records Dashboard',
 sitesList = sorted(list(set(spacex_df['Launch Site'])))
 
 # Add callback decorator
+
+
 @app.callback(Output(component_id='success-pie-chart', component_property='figure'),
               Input(component_id='site-dropdown', component_property='value'))
 # Add computation to callback function and return pie
@@ -108,6 +110,7 @@ def get_scatter(entered_site, slider):
                          color='Booster Version Category', title="Correlation for " + entered_site)
         return fig
 
+
 # Run the app
 if __name__ == '__main__':
     app.run_server()
@@ -116,9 +119,16 @@ if __name__ == '__main__':
 
 
 # Which site has the highest launch success rate?
+# Answer: KSC LC-39A
+
 # Which payload range(s) has the highest launch success rate?
+# Answer: 3100 - 3700 Kg
+
 # Which payload range(s) has the lowest launch success rate?
-# Which F9 Booster version(v1.0, v1.1, FT, B4, B5, etc.) has the highest
+# Answer: 5300 - 10000 Kg
+
+# Which F9 Booster version(v1.0, v1.1, FT, B4, B5, etc.) has the highest success rate?
+# Answer: FT
 
 # Plotly Dash Reference
 # https://dash.plotly.com/dash-core-components/dropdown?utm_medium=Exinfluencer&utm_source=Exinfluencer&utm_content=000026UJ&utm_term=10006555&utm_id=NA-SkillsNetwork-Channel-SkillsNetworkCoursesIBMDS0321ENSkillsNetwork26802033-2021-01-01
